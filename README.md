@@ -1,0 +1,1 @@
+Pip install -r requirements.txt
