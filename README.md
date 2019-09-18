@@ -1,1 +1,1 @@
-Pip install -r requirements.txt
+Pip3 install -r requirements.txt
