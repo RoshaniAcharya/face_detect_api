@@ -5,14 +5,9 @@ import time
 import cv2
 start = time.time()
 import numpy as np
-import matplotlib.pyplot as plt
 
 np.set_printoptions(precision=2)
 logger = logging.getLogger()
-
-
-def waitKey(millis):
-    return cv2.waitKey(millis)
 
 
 def draw_rect(img, x, y, w, h, color=(0, 40, 255)):
@@ -70,6 +65,7 @@ def draw_rects_dlib(img, rects):
         cv2.rectangle(overlay, bl, tr, color=(0, 255, 255), thickness=2)
         cv2.addWeighted(overlay, 0.5, output, 0.5, 0, output)
     return output
+
 
 def imcrop(image, bbox):
     """

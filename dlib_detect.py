@@ -1,7 +1,6 @@
 """
 Dlib Face Detection Library
 """
-import cv2
 import os
 import dlib
 import numpy as np
@@ -13,7 +12,7 @@ class DlibDetect:
     def __init__(self, model_path):
         shape_predictor_path = os.path.realpath(model_path)
         self.detector = dlib.get_frontal_face_detector()
-        self.predictor = dlib.shape_predictor('resources/shape_predictor_68_face_landmarks.dat')
+        self.predictor = dlib.shape_predictor(shape_predictor_path)
 
     @property
     def _detector_name(self):
@@ -68,16 +67,6 @@ class DlibDetect:
 
         points = self.predictor(img, bbox)
         return list(map(lambda p: (p.y, p.x), points.parts()))
-
-
-if __name__ == '__main__':
-    video_capture = cv2.VideoCapture(0)
-    while True:
-        ret, frame = video_capture.read()
-        a= DlibDetect("resources/shape_predictor_68_face_landmarks.dat")
-        bboxes, landmarks =a.detect_face(frame)
-        print(bboxes)
-        print(landmarks)
 
 
 

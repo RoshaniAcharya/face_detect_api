@@ -2,6 +2,6 @@ Pip3 install -r requirements.txt
 
 To use:
 cd api
-source ml/bin/activate (To activate virtual environment ml)
+source activate ml (to activate conda environment)
 cd face_detect_api
 python3 app.py

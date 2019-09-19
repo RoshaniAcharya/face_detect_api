@@ -47,4 +47,4 @@ def detect_face():
 
 if __name__ == '__main__':
     detector = DlibDetect("resources/shape_predictor_68_face_landmarks.dat")
-    app.run(debug=True)
+    app.run(debug=True, host='13.127.203.74')
